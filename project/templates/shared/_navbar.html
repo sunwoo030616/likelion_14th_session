@@ -2,7 +2,7 @@
 
 <nav class="nav">
     <div class="nav-item {% if request.resolver_match.url_name == 'mainpage' %}active{% endif %}">
-        <a class="nav-item" href="{% url 'main:mainpage' %}">
+        <a href="{% url 'main:mainpage' %}">
             <div class="nav-icon">
                 <img src="{% static 'images/icon-food.png' %}" class="nav-icon-img">
             </div>
@@ -11,7 +11,7 @@
     </div>
 
     <div class="nav-item {% if request.resolver_match.url_name == 'blogpage' %}active{% endif %}">
-        <a class="nav-item" href="{% url 'main:blogpage' %}">
+        {#<a href="{% url 'main:blogpage' %}">#}
             <div class="nav-icon">
                 <img src="{% static 'images/icon-book.png' %}" alt="게시판 아이콘" class="nav-icon-img">
             </div>
