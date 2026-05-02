@@ -53,8 +53,11 @@ def update(request, blog_id):
     
     update_blog = get_object_or_404(Blog, pk=blog_id)
     
+    if update_blog.writer != request.user.username:
+        return redirect('main:detail', update_blog.id)
+    
     update_blog.title = request.POST['title']
-    update_blog.writer = request.POST['writer']
+    update_blog.writer = request.user.username
     update_blog.content = request.POST['content']
     update_blog.pub_date = request.POST['pub_date']
     
