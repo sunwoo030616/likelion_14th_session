@@ -40,4 +40,11 @@
             <span class="nav-label">게시판</span>
         </a>
     </div>
+
+        <div class="nav-item {% if request.resolver_match.url_name == 'tag_list' or request.resolver_match.url_name == 'tag_blog_list' %}active{% endif %}">
+        <a class="nav-item" href="{% url 'main:tag_list' %}">
+            <span class="nav-label">태그</span>
+        </a>
+    </div>
+    
 </nav>

@@ -2,6 +2,11 @@
 
 {% block content %}
 {% load static %}
+<div>
+{% if user.is_authenticated %}
+    <a href="{% url 'main:new_blog' %}">새 글 작성하기</a>
+{% endif %}
+</div>
 <div class="card-grid">
      {% for blog in blogs %}
      <div class="card">
@@ -12,7 +17,7 @@
           </div>
           <div class="card-footer">
                <div class="divider"></div>
-               <span>{{ blog.writer }}</span>
+               <span>{{ blog.writer.profile.nickname }}</span>
           </div>
      </div>
      {% endfor %}
